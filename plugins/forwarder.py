@@ -6,13 +6,14 @@ from structlog.stdlib import get_logger
 
 logger = get_logger(__name__)
 
-class JosephResponderBot(MachineBasePlugin):
+@required_settings(['FORWARDER_INBOX'])
+class ResponderBot(MachineBasePlugin):
 
-    @required_settings(["INBOX_JOSEPH"])
-    @listen_to(regex=r"Joseph")
+    @listen_to(regex=rf"<@U01NJ9RDQ2D>")
     async def forward_message(self, msg):
+        logger.info(msg.text)
         forwarded_msg = await self.say(
-            channel=self.settings['INBOX_JOSEPH'],
+            channel=self.settings['FORWARDER_INBOX'],
             text=msg.text
         )
         link = await self.web_client.chat_getPermalink(
