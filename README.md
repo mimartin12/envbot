@@ -12,3 +12,13 @@ Plugins are developed in the `./plugins` directory and enabled by adding the nam
 ```
 <INSERT EXAMPLE HERE>
 ```
+
+
+## Testing
+
+### Manual Testing Setup (joseph-flinn)
+
+```bash
+nix develop
+pipenv run slack-machine
+```
