@@ -12,8 +12,11 @@ SLACK_BOT_TOKEN = os.getenv("SLACK_BOT_TOKEN")
 FORWARDER_INBOX = os.getenv("FORWARDER_INBOX")
 FORWARDER_LISTEN_ID = os.getenv("FORWARDER_LISTEN_ID")
 
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
 
 PLUGINS = [
-    "machine.plugins.builtin.general.HelloPlugin",
-    "plugins.forwarder.ResponderBot",
+    "plugins.env.EnvBot",
+    # "machine.plugins.builtin.general.HelloPlugin",
+    # "plugins.forwarder.ResponderBot",
 ]

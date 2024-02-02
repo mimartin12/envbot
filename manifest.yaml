@@ -4,6 +4,11 @@ features:
   bot_user:
     display_name: BDB-1
     always_online: false
+  slash_commands:
+    - command: /env
+      description: Interact with environments
+      usage_hint: "[list]"
+      should_escape: false
 oauth_config:
   scopes:
     bot:
